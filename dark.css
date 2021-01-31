@@ -33,7 +33,9 @@
 }
 
 .mobPicture img{
-    width: 70%;
+    width: auto;
+    height: auto;
+    max-height: 300px;
 }
 
 .spells{
