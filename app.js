@@ -37,7 +37,7 @@ const attacks = [
         functionClick :"laceration()"
     },
     {
-        name : "Vomie immonde",
+        name : "Vomi immonde",
         damage : 12,
         manaCost : 3,
         attackType : "Maladie",
@@ -61,11 +61,11 @@ const attacks = [
         functionClick :"rageAnimal()"
     },
     {
-        name : "Guérison de plante",
+        name : "Tempête meurtrières",
         damage : 24,
         manaCost : 15,
-        attackType : "Soin",
-        imgUrl : "./assets/img/guerison_de_plante.jpg",
+        attackType : "Nature",
+        imgUrl : "./assets/img/tempete.png",
         functionClick :"guerisonPlante()"
     },
 ]
@@ -74,17 +74,17 @@ const monsters = [
     {
         name : "Zombie",
         imgUrl : "./assets/img/zombie.jpg",
-        lifePoint : 56,
+        lifePoint : 74,
         mana : 15,
-        availableAttacks : ["Attaque de base","Peste virulente", "Lacération", "Vomie immonde" ]
+        availableAttacks : ["Attaque de base","Peste virulente", "Lacération", "Vomi immonde" ]
 
     },
     {
         name : "Druide",
         imgUrl : "./assets/img/druide.jpeg",
-        lifePoint : 43,
+        lifePoint : 62,
         mana : 25,
-        availableAttacks : ["Attaque de base","Attaque de ronce", "Rage animal", "Guérison de plante" ]
+        availableAttacks : ["Attaque de base","Attaque de ronce", "Rage animal", "Tempête meurtrières" ]
 
     },
      //TODO : add other monsters
@@ -199,6 +199,7 @@ function spellUse(spellDamage,spellMana,numPlayer){
         }else{
             alert("You can't cast this spell");
             actualPlayersRessources[0].mana =actualPlayersRessources[0].mana+spellMana;
+            actualPlayersRessources[1].lifePoint = actualPlayersRessources[1].lifePoint+spellDamage;
         }
         //updatingRessources(actualPlayersRessources,numPlayer);
         //updatingRessources(actualPlayersRessources[0],numPlayer);
@@ -211,6 +212,7 @@ function spellUse(spellDamage,spellMana,numPlayer){
         }else{
             alert("You can't cast this spell");
             actualPlayersRessources[1].mana =actualPlayersRessources[1].mana+spellMana;
+            actualPlayersRessources[0].lifePoint = actualPlayersRessources[0].lifePoint+spellDamage;
         }
         
         //updatingRessources(actualPlayersRessources,numPlayer);
@@ -219,10 +221,16 @@ function spellUse(spellDamage,spellMana,numPlayer){
     console.log(actualPlayersRessources);
 }
 
+let playerTurn;
+
+function choseFisrtPlayer(){
+    firstPlayerToPlay = Math.floor(Math.random()*2);
+}
 
 
+function switchingTurn(){
 
-
+}
 
 
 function init () {
@@ -234,8 +242,7 @@ function init () {
     //pictureAttribution(player2,numPlayer);
     ressources(player1, "1");
     ressources(player2, "2");
-
-    
+        
 }
 
 init()
