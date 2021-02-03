@@ -30,12 +30,12 @@
 }
 .mobPicture{
     text-align: center;
+
 }
 
 .mobPicture img{
     width: auto;
-    height: auto;
-    max-height: 300px;
+    height: 300px;    
 }
 
 .spells{
@@ -68,6 +68,12 @@
     margin: 0 17.5% 0 7.5%;
     text-align: left;
     justify-content: left;
+
+}
+
+.spellPicture img{
+    object-fit: contain;
+    height: 100%;
 }
 
 .spellDamage{
@@ -76,6 +82,7 @@
     text-align: right;
     justify-content: right;
     padding: 7.5% 5%;
+    flex-grow: 2;
 }
 
 .spellCost{
@@ -91,4 +98,6 @@
     padding: 7.5% 0;
 }
 
-
+.playerTurn{
+    color: red;
+}
