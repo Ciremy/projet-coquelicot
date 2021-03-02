@@ -1,74 +1,103 @@
-.chooseButton{
+.duelWrapper{
     flex-direction: row;
     flex-wrap: wrap;
     display: flex;
+    height:100%;
+    text-align: center;
+}
+
+.ressources{
+    justify-content: center;
+    text-align: center;
+}
+
+
+.allyZone{
+    justify-content: center;
+    width: 50%;
+}
+
+.enemyZone{
+    width: 50%;
     justify-content: center;
 }
-.chooseButton div{
-    width: 50%;
+
+.healPoint{
+    color: green;
+}
+.staminaPoint{
+    color: blue;
+}
+.mobPicture{
     text-align: center;
+
 }
 
-.chooseButton button{
-    border: none;
-    padding: 15% 30%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 250%;
+.mobPicture img{
+    width: auto;
+    height: 300px;    
 }
 
-.lightButton{
-    background-color: #B2F8FF;
-    color: white;
-    box-shadow: -10px 25px 50px rgba(0, 0, 0, 0.3);
+.spells{
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
 }
 
-.darkButton{
-    background-color: #690707;
-    color: black;
-    box-shadow: -10px 25px 50px rgba(0, 0, 0, 0.3);
+.spells div{
+    width: 48%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    border: solid 1px;
 }
 
-.chooseButton .light{
-    position: relative;
-    z-index: 2;
+.spells div p{
+    margin: 0;
 }
 
-.chooseButton .dark{
-    position: relative;
-    z-index: 2;
-}
-
-
-.chooseButton .bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    opacity: 0;
-    transition: all 1.5s ease-out;
-    pointer-events: none;
+.spellName{
+    font-size: 16px;
+    text-align: inherit;
     width: 100%;
-    height: 200%;
-    overflow: hidden;
+    font-weight: bold;
 }
 
+.spellPicture{
+    width: 25%;
+    margin: 0 17.5% 0 7.5%;
+    text-align: left;
+    justify-content: left;
 
-
-.chooseButton .light:hover,
-.chooseButton .light:hover~.bg{
-    opacity: 1;
-    background: #B2F8FF;
-    transition: all 0.5s ease-out;
 }
 
-.chooseButton .dark:hover,
-.chooseButton .dark:hover~.bg{
-    opacity: 1;
-    background: #690707;
-    transition: all 0.5s ease-out;
+.spellPicture img{
+    object-fit: contain;
+    height: 100%;
 }
 
+.spellDamage{
+    font-size: 16px;
+    width: 40%;
+    text-align: right;
+    justify-content: right;
+    padding: 7.5% 5%;
+    flex-grow: 2;
+}
 
+.spellCost{
+    font-size: 16px;
+    width: 40%;
+    text-align: right;
+    justify-content: right;
+    padding: 7.5% 5%;
+}
 
+.spellType{
+    width: 50%;
+    padding: 7.5% 0;
+}
+
+.playerTurn{
+    color: red;
+}
